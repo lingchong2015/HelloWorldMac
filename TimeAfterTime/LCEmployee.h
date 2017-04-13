@@ -11,7 +11,7 @@
 @interface LCEmployee : BNRPerson
 
 @property (nonatomic) unsigned int employeeID;
-@property (nonatomic) int officeAlarmCode;
+@property (nonatomic) unsigned int officeAlarmCode;
 @property (nonatomic) NSDate *hireDate;
 
 - (double)yearsOfEmployment;
