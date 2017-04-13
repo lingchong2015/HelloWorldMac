@@ -13,6 +13,7 @@
 #include "LCStockHolding.h"
 #include "LCEmployee.h"
 #include "LCForeignStockHolding.h"
+#include "LCAsset.h"
 
 /*
  * 我目前（2017年4月10日晚10点35分）对消息发送（message send）机制的理解：
@@ -125,7 +126,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"mikey的ID为%u，入职日期为%@。", mikey.employeeID, mikey.hireDate);
          */
         
-        /**/
+        /*
         LCStockHolding *stockHolding1 = [[LCStockHolding alloc] initWithSerial:0];
         [stockHolding1 setPurchaseSharePrice:30];
         [stockHolding1 setCurrentSharePrice:35];
@@ -149,7 +150,25 @@ int main(int argc, const char * argv[]) {
         for (LCStockHolding *item in stockHoldingList) {
             NSLog(@"%d: %.2f %.2f", item.serial, [item costInDollars], [item valueInDollars]);
         }
-        /**/
+        */
+        
+        /*
+         * 如果采用下面的赋值方式：
+         * NSMutableString *label = @"";
+         * 则@"凌冲"为一个NSString类型的字符串，这个字符串是不可变的，如果调用：
+         * [label appendString:@"1"];
+         * 会报“Attempt to mutate immutable object with appendString:”错误。
+         * 因此，如果要创建一个可变字符串，需要使用下面的方法：
+         * NSMutableString *label = [[NSMutableString alloc] initWithString:@"凌冲"];
+         */
+        /*
+        NSMutableString *label = [[NSMutableString alloc] initWithString:@"凌冲"];
+        LCAsset *asset = [[LCAsset alloc] init];
+        asset.label = label;// label是可变字符串，asset.label是一个不可变字符串，对label的修改不会影响到label（因为asset.label的属性中有copy特性）。
+        [label appendString:@"1"];
+        NSLog(@"%@", label);
+        NSLog(@"%@", asset.label);
+         */
     }
     return 0;
 }

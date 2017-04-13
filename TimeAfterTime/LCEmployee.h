@@ -7,13 +7,19 @@
 //
 
 #import "BNRPerson.h"
+@class LCAsset;
 
-@interface LCEmployee : BNRPerson
+@interface LCEmployee : BNRPerson{
+    NSMutableArray *_assets;
+}
 
 @property (nonatomic) unsigned int employeeID;
 @property (nonatomic) unsigned int officeAlarmCode;
 @property (nonatomic) NSDate *hireDate;
+@property (nonatomic, copy) NSArray *assets;//存取的数组都是不可变的。
 
 - (double)yearsOfEmployment;
+- (void)addAssets:(LCAsset *)asset;
+- (unsigned int)valueOfAssets;
 
 @end
