@@ -11,6 +11,8 @@
 #include "chapter17.h"
 #include "BNRPerson.h"
 #include "LCStockHolding.h"
+#include "LCEmployee.h"
+#include "LCForeignStockHolding.h"
 
 /*
  * 我目前（2017年4月10日晚10点35分）对消息发送（message send）机制的理解：
@@ -112,13 +114,18 @@ int main(int argc, const char * argv[]) {
         */
         
         /*
-        BNRPerson *mikey = [[BNRPerson alloc] init];
+        LCEmployee *mikey = [[LCEmployee alloc] init];
+        NSLog(@"%@", mikey);
         [mikey setHeightInMeters:1.85];
         [mikey setWeightInMeters:87.5];
+        mikey.employeeID = 0;
+        mikey.hireDate = [NSDate dateWithNaturalLanguageString:@"Aug 2nd, 2010"];
         NSLog(@"mikey的身高为%.2f米，体重为%.2f千克。", [mikey heightInMeters], [mikey weightInKilos]);
         NSLog(@"mikey的身体体质指标为：%.2f。", [mikey bodyMassIndex]);
+        NSLog(@"mikey的ID为%u，入职日期为%@。", mikey.employeeID, mikey.hireDate);
          */
         
+        /**/
         LCStockHolding *stockHolding1 = [[LCStockHolding alloc] initWithSerial:0];
         [stockHolding1 setPurchaseSharePrice:30];
         [stockHolding1 setCurrentSharePrice:35];
@@ -129,12 +136,20 @@ int main(int argc, const char * argv[]) {
         [stockHolding2 setCurrentSharePrice:40];
         [stockHolding2 setNumberOfShare:130];
         
+        LCForeignStockHolding *stockHolding3 = [[LCForeignStockHolding alloc] init];
+        stockHolding3.purchaseSharePrice = 22;
+        stockHolding3.currentSharePrice = 23;
+        stockHolding3.numberOfShare = 300;
+        stockHolding3.conversionRate = 1.2;
+        
         NSMutableArray *stockHoldingList = [[NSMutableArray alloc] init];
         [stockHoldingList addObject:stockHolding1];
         [stockHoldingList addObject:stockHolding2];
+        [stockHoldingList addObject:stockHolding3];
         for (LCStockHolding *item in stockHoldingList) {
             NSLog(@"%d: %.2f %.2f", item.serial, [item costInDollars], [item valueInDollars]);
         }
+        /**/
     }
     return 0;
 }

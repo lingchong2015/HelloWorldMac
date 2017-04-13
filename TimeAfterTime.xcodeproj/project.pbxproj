@@ -14,6 +14,7 @@
 		FE651DBE1E9B880600FAA805 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE651DBD1E9B880600FAA805 /* main.m */; };
 		FE68667C1E9DD41800B530D5 /* BNRPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = FE68667B1E9DD41800B530D5 /* BNRPerson.m */; };
 		FE68667F1E9E145A00B530D5 /* LCStockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE68667E1E9E145A00B530D5 /* LCStockHolding.m */; };
+		FE9024EB1E9F0AF9008C3CFC /* LCForeignStockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9024EA1E9F0AF9008C3CFC /* LCForeignStockHolding.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +43,8 @@
 		FE68667B1E9DD41800B530D5 /* BNRPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRPerson.m; sourceTree = "<group>"; };
 		FE68667D1E9E145A00B530D5 /* LCStockHolding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCStockHolding.h; sourceTree = "<group>"; };
 		FE68667E1E9E145A00B530D5 /* LCStockHolding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCStockHolding.m; sourceTree = "<group>"; };
+		FE9024E91E9F0AF9008C3CFC /* LCForeignStockHolding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCForeignStockHolding.h; sourceTree = "<group>"; };
+		FE9024EA1E9F0AF9008C3CFC /* LCForeignStockHolding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCForeignStockHolding.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +90,8 @@
 				FE68667E1E9E145A00B530D5 /* LCStockHolding.m */,
 				FE078E241E9E26E500E10C83 /* LCEmployee.h */,
 				FE078E251E9E26E500E10C83 /* LCEmployee.m */,
+				FE9024E91E9F0AF9008C3CFC /* LCForeignStockHolding.h */,
+				FE9024EA1E9F0AF9008C3CFC /* LCForeignStockHolding.m */,
 			);
 			path = TimeAfterTime;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 				FE55565C1E9D176200008399 /* chapter17.m in Sources */,
 				FE68667F1E9E145A00B530D5 /* LCStockHolding.m in Sources */,
 				FE078E261E9E26E500E10C83 /* LCEmployee.m in Sources */,
+				FE9024EB1E9F0AF9008C3CFC /* LCForeignStockHolding.m in Sources */,
 				FE68667C1E9DD41800B530D5 /* BNRPerson.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
