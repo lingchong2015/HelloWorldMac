@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FE078E261E9E26E500E10C83 /* LCEmployee.m in Sources */ = {isa = PBXBuildFile; fileRef = FE078E251E9E26E500E10C83 /* LCEmployee.m */; };
+		FE51105A1EA11C8100DBF479 /* LCChapter24.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5110591EA11C8100DBF479 /* LCChapter24.m */; };
 		FE5556581E9D06B400008399 /* chapter16.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5556571E9D06B400008399 /* chapter16.m */; };
 		FE55565A1E9D16F300008399 /* libreadline.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5556591E9D16F300008399 /* libreadline.tbd */; };
 		FE55565C1E9D176200008399 /* chapter17.m in Sources */ = {isa = PBXBuildFile; fileRef = FE55565B1E9D176200008399 /* chapter17.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		FE078E241E9E26E500E10C83 /* LCEmployee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCEmployee.h; sourceTree = "<group>"; };
 		FE078E251E9E26E500E10C83 /* LCEmployee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCEmployee.m; sourceTree = "<group>"; };
+		FE5110581EA11C8100DBF479 /* LCChapter24.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCChapter24.h; sourceTree = "<group>"; };
+		FE5110591EA11C8100DBF479 /* LCChapter24.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChapter24.m; sourceTree = "<group>"; };
 		FE5556561E9D05BA00008399 /* chapter16.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chapter16.h; sourceTree = "<group>"; };
 		FE5556571E9D06B400008399 /* chapter16.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chapter16.m; sourceTree = "<group>"; };
 		FE5556591E9D16F300008399 /* libreadline.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libreadline.tbd; path = usr/lib/libreadline.tbd; sourceTree = SDKROOT; };
@@ -102,6 +105,8 @@
 				FE9024EA1E9F0AF9008C3CFC /* LCForeignStockHolding.m */,
 				FE6861B61EA09D500064C1C8 /* LCPortfolio.h */,
 				FE6861B71EA09D500064C1C8 /* LCPortfolio.m */,
+				FE5110581EA11C8100DBF479 /* LCChapter24.h */,
+				FE5110591EA11C8100DBF479 /* LCChapter24.m */,
 			);
 			path = TimeAfterTime;
 			sourceTree = "<group>";
@@ -168,6 +173,7 @@
 				FE9024EE1E9F2B80008C3CFC /* LCAsset.m in Sources */,
 				FE6861B81EA09D500064C1C8 /* LCPortfolio.m in Sources */,
 				FE68667F1E9E145A00B530D5 /* LCStockHolding.m in Sources */,
+				FE51105A1EA11C8100DBF479 /* LCChapter24.m in Sources */,
 				FE078E261E9E26E500E10C83 /* LCEmployee.m in Sources */,
 				FE9024EB1E9F0AF9008C3CFC /* LCForeignStockHolding.m in Sources */,
 				FE68667C1E9DD41800B530D5 /* BNRPerson.m in Sources */,

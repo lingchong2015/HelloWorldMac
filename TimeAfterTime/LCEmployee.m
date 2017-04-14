@@ -36,12 +36,15 @@
         _assets = [[NSMutableArray alloc] init];
     }
     [_assets addObject:asset];
+    asset.holder = self;
 }
 
 - (void)removeAssets:(NSUInteger)index {
     if (_assets == nil) {
         return;
     }
+    LCAsset *asset = [_assets objectAtIndex:index];
+    asset.holder = nil;
     [_assets removeObjectAtIndex:index];
 }
 

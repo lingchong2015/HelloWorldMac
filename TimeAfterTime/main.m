@@ -15,6 +15,7 @@
 #include "LCForeignStockHolding.h"
 #include "LCAsset.h"
 #include "LCPortfolio.h"
+#include "LCChapter24.h"
 
 /*
  * 我目前（2017年4月10日晚10点35分）对消息发送（message send）机制的理解：
@@ -182,6 +183,7 @@ int main(int argc, const char * argv[]) {
             [employees addObject:employee];
         }
         
+        NSMutableArray *allAssets = [[NSMutableArray alloc] init];
         for (int i = 0; i < 10; ++i) {
             LCAsset *asset = [[LCAsset alloc] init];
             
@@ -190,23 +192,26 @@ int main(int argc, const char * argv[]) {
             
             NSUInteger randomIndex = random() % [employees count];
             [[employees objectAtIndex:randomIndex] addAsset:asset];
+            [allAssets addObject:asset];
         }
         
-        [[employees objectAtIndex:1] removeAssets:0];
+        // [[employees objectAtIndex:1] removeAssets:0];
         
         NSLog(@"Employee: %@", employees);
         NSLog(@"Giving up ownership of one employee.");
         // 删除了索引为5的LCEmployee对象，该对象会被立即释放，相应的的dealloc方法会被调用，同时，其成员变量assets（NSArray类型）对象会被释放且相应的dealloc
         // 方法也会被调用。
         [employees removeObjectAtIndex:5];
+        NSLog(@"%@", allAssets);
         NSLog(@"Giving up ownership of other employees.");
         // 当employees对象被设置为nil时，employees对象会被释放，其中的元素（LCEmployee对象）也会被依次释放，但即使没有下面这条语句，在程序结束时也会释放，所
         // 不同的是：如果没有@autoreleasepool关键字或使用{}将所有语句括起来，会在跳出这两种情况的作用域时释放，否则，employees的释放要等到程序彻底结束时才会释
         // 放。
         employees = nil;
+        // sleep(100);
         */
         
-        /**/
+        /*
         LCPortfolio *portfolio = [[LCPortfolio alloc] init];
         NSMutableArray *stockHoldings = [[NSMutableArray alloc] init];
         [portfolio setHoldings:stockHoldings];
@@ -233,7 +238,21 @@ int main(int argc, const char * argv[]) {
         stockHolding2 = nil;
         
         portfolio = nil;
-        /**/
+        */
+        
+        NSMutableSet *set = [[NSMutableSet alloc] init];
+        LCChapter24 *chapter24_1 = [[LCChapter24 alloc] init];
+        LCChapter24 *chapter24_2 = [[LCChapter24 alloc] init];
+        [set addObject:chapter24_1];
+        BOOL isContained = [set containsObject:chapter24_2];
+        if (isContained == true) {
+            NSLog(@"Yes.");
+        } else {
+            NSLog(@"No.");
+        }
+        
+        char* string = "ab";
+        printf("%zu\n", strlen(string));
     }
     return 0;
 }

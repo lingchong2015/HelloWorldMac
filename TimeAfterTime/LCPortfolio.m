@@ -10,7 +10,7 @@
 #include "LCStockHolding.h"
 
 @interface LCPortfolio() {
-    NSMutableArray *_holdings;
+    NSMutableArray *_holdings;//
 }
 
 @end

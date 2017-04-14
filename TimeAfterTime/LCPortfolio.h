@@ -13,7 +13,7 @@
     // NSMutableArray *_holdings;
 }
 
-@property (atomic) NSArray *holdings;
+@property (nonatomic) NSArray *holdings;
 
 - (void)addHolding:(LCStockHolding *)holding;
 
