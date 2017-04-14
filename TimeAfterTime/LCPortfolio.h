@@ -10,7 +10,7 @@
 @class LCStockHolding;
 
 @interface LCPortfolio : NSObject {
-    NSMutableArray *_holdings;
+    // NSMutableArray *_holdings;
 }
 
 @property (atomic) NSArray *holdings;

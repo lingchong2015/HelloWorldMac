@@ -9,6 +9,12 @@
 #import "LCPortfolio.h"
 #include "LCStockHolding.h"
 
+@interface LCPortfolio() {
+    NSMutableArray *_holdings;
+}
+
+@end
+
 @implementation LCPortfolio
 
 - (NSArray*)holdings {

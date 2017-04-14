@@ -171,7 +171,7 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@", asset.label);
          */
         
-        /**/
+        /*
         NSMutableArray *employees = [[NSMutableArray alloc] init];
         for (int i= 0; i < 10; ++i) {
             LCEmployee *employee = [[LCEmployee alloc] init];
@@ -204,9 +204,9 @@ int main(int argc, const char * argv[]) {
         // 不同的是：如果没有@autoreleasepool关键字或使用{}将所有语句括起来，会在跳出这两种情况的作用域时释放，否则，employees的释放要等到程序彻底结束时才会释
         // 放。
         employees = nil;
-        /**/
+        */
         
-        /*
+        /**/
         LCPortfolio *portfolio = [[LCPortfolio alloc] init];
         NSMutableArray *stockHoldings = [[NSMutableArray alloc] init];
         [portfolio setHoldings:stockHoldings];
@@ -233,7 +233,7 @@ int main(int argc, const char * argv[]) {
         stockHolding2 = nil;
         
         portfolio = nil;
-        */
+        /**/
     }
     return 0;
 }

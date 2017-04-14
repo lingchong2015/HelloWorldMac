@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TimeAfterTime/LCEmployee.m"
-            timestampString = "513846225.163928"
+            timestampString = "513858112.60316"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
             landmarkName = "@implementation LCEmployee"
             landmarkType = "3">
          </BreakpointContent>

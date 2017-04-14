@@ -9,7 +9,13 @@
 #import "LCEmployee.h"
 #import "LCAsset.h"
 
-@interface LCEmployee()
+/*
+ * 声明类扩展，在类扩展中的实例变量、属性与方法只有类与类的实例能够访问，对于非LCEmployee接口/类（包括LCEmployee的子类）来说，唯一可见的
+ * 是LCEmployee头文件中的属性与方法。
+ */
+@interface LCEmployee() {
+    NSMutableArray *_assets;
+}
 
 @property (nonatomic) unsigned int officeAlarmCode;
 
