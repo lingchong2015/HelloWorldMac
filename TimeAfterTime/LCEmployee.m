@@ -9,6 +9,12 @@
 #import "LCEmployee.h"
 #import "LCAsset.h"
 
+@interface LCEmployee()
+
+@property (nonatomic) unsigned int officeAlarmCode;
+
+@end
+
 @implementation LCEmployee
 
 - (NSArray *)assets {
@@ -19,11 +25,18 @@
     _assets = [assets mutableCopy];// 将一个可变数组新实例赋值给_assets实例变量。
 }
 
-- (void)addAssets:(LCAsset *)asset {
+- (void)addAsset:(LCAsset *)asset {
     if (_assets == nil) {
         _assets = [[NSMutableArray alloc] init];
     }
     [_assets addObject:asset];
+}
+
+- (void)removeAssets:(NSUInteger)index {
+    if (_assets == nil) {
+        return;
+    }
+    [_assets removeObjectAtIndex:index];
 }
 
 - (unsigned int)valueOfAssets {

@@ -57,4 +57,41 @@
     return [self currentSharePrice] * [self numberOfShare];
 }
 
+- (NSString*)description {
+    return [NSString stringWithFormat:@"<LCStockHolding - %d - %@>", _serial, _symbol];
+}
+
+- (void)dealloc {
+    NSLog(@"dealloc: %@", self);
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

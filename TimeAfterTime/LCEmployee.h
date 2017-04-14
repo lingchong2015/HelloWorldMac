@@ -14,12 +14,12 @@
 }
 
 @property (nonatomic) unsigned int employeeID;
-@property (nonatomic) unsigned int officeAlarmCode;
 @property (nonatomic) NSDate *hireDate;
 @property (nonatomic, copy) NSArray *assets;//存取的数组都是不可变的。
 
 - (double)yearsOfEmployment;
-- (void)addAssets:(LCAsset *)asset;
+- (void)addAsset:(LCAsset *)asset;
+- (void)removeAssets:(NSUInteger)index;
 - (unsigned int)valueOfAssets;
 
 @end

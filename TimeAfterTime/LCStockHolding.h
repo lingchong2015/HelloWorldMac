@@ -14,6 +14,7 @@
     // int _numberOfShare;
 }
 
+@property (nonatomic, copy) NSString * symbol;
 @property (nonatomic) float purchaseSharePrice;
 @property (nonatomic) float currentSharePrice;
 @property (nonatomic) float numberOfShare;

@@ -14,6 +14,7 @@
 #include "LCEmployee.h"
 #include "LCForeignStockHolding.h"
 #include "LCAsset.h"
+#include "LCPortfolio.h"
 
 /*
  * 我目前（2017年4月10日晚10点35分）对消息发送（message send）机制的理解：
@@ -169,6 +170,70 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@", label);
         NSLog(@"%@", asset.label);
          */
+        
+        /**/
+        NSMutableArray *employees = [[NSMutableArray alloc] init];
+        for (int i= 0; i < 10; ++i) {
+            LCEmployee *employee = [[LCEmployee alloc] init];
+            [employee setWeightInMeters:90 + i];
+            [employee setHeightInMeters:1.8 - i / 10.0];
+            employee.employeeID = i;
+            
+            [employees addObject:employee];
+        }
+        
+        for (int i = 0; i < 10; ++i) {
+            LCAsset *asset = [[LCAsset alloc] init];
+            
+            asset.label = [NSString stringWithFormat:@"Laptop %d", i];
+            asset.resaleValue = i * 17;
+            
+            NSUInteger randomIndex = random() % [employees count];
+            [[employees objectAtIndex:randomIndex] addAsset:asset];
+        }
+        
+        [[employees objectAtIndex:1] removeAssets:0];
+        
+        NSLog(@"Employee: %@", employees);
+        NSLog(@"Giving up ownership of one employee.");
+        // 删除了索引为5的LCEmployee对象，该对象会被立即释放，相应的的dealloc方法会被调用，同时，其成员变量assets（NSArray类型）对象会被释放且相应的dealloc
+        // 方法也会被调用。
+        [employees removeObjectAtIndex:5];
+        NSLog(@"Giving up ownership of other employees.");
+        // 当employees对象被设置为nil时，employees对象会被释放，其中的元素（LCEmployee对象）也会被依次释放，但即使没有下面这条语句，在程序结束时也会释放，所
+        // 不同的是：如果没有@autoreleasepool关键字或使用{}将所有语句括起来，会在跳出这两种情况的作用域时释放，否则，employees的释放要等到程序彻底结束时才会释
+        // 放。
+        employees = nil;
+        /**/
+        
+        /*
+        LCPortfolio *portfolio = [[LCPortfolio alloc] init];
+        NSMutableArray *stockHoldings = [[NSMutableArray alloc] init];
+        [portfolio setHoldings:stockHoldings];
+        
+        LCStockHolding *stockHolding1 = [[LCStockHolding alloc] initWithSerial:0];// heap1。
+        stockHolding1.currentSharePrice = 22;
+        stockHolding1.numberOfShare = 40;
+        stockHolding1.symbol = @"xyz";
+        
+        LCForeignStockHolding * stockHolding2 = [[LCForeignStockHolding alloc] initWithSerial:1];// heap2。
+        stockHolding2.currentSharePrice = 23;
+        stockHolding2.numberOfShare = 39;
+        stockHolding2.symbol = @"abc";
+        
+        [portfolio addHolding:stockHolding1];
+        [portfolio addHolding:stockHolding2];
+        
+        NSLog(@"%.2f", [portfolio totalValue]);
+        [portfolio removeHoldings:1];
+        
+        // stockHolding1与stockHolding2也会分别引用分配的堆内存heap1与heap2，此时，heap1与heap2的ARC应分别为1，这里设置为nil可以
+        // 分别将heap1与heap2的ARC降为0，lCStockHolding的dealloc方法此时会被调用。
+        stockHolding1 = nil;
+        stockHolding2 = nil;
+        
+        portfolio = nil;
+        */
     }
     return 0;
 }
