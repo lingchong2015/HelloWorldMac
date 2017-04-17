@@ -16,6 +16,7 @@
 #include "LCAsset.h"
 #include "LCPortfolio.h"
 #include "LCChapter24.h"
+#include "LCChapter25.h"
 
 /*
  * 我目前（2017年4月10日晚10点35分）对消息发送（message send）机制的理解：
@@ -240,6 +241,7 @@ int main(int argc, const char * argv[]) {
         portfolio = nil;
         */
         
+        /*
         NSMutableSet *set = [[NSMutableSet alloc] init];
         LCChapter24 *chapter24_1 = [[LCChapter24 alloc] init];
         LCChapter24 *chapter24_2 = [[LCChapter24 alloc] init];
@@ -250,9 +252,80 @@ int main(int argc, const char * argv[]) {
         } else {
             NSLog(@"No.");
         }
+        */
         
+        /*
         char* string = "ab";
         printf("%zu\n", strlen(string));
+         */
+        
+        /*
+        NSLocale *here = [NSLocale currentLocale];
+        NSString *currency = [here objectForKey:NSLocaleCurrencyCode];
+        NSLog(@"本地货币单位：%@", currency );
+         */
+        
+        /*
+        NSLog(@"%@", MyName);
+        
+        NSLog(@"%d", ISMAX(1, 5));
+        
+        LCChapter25 *lcChapter25 = [[LCChapter25 alloc] init];
+        lcChapter25.blenderSpeed = BlenderSpeedChop;
+        NSLog(@"%d", lcChapter25.blenderSpeed);
+         */
+        
+        /*
+        NSMutableString *content = [[NSMutableString alloc] init];
+        for (int i = 0; i < 10; ++i) {
+            [content appendString:@"凌冲\n"];
+        }
+        NSError *error;
+        BOOL result = [content writeToFile:@"/tmp/personal/lingchong.txt" atomically:YES encoding:NSUTF8StringEncoding error:&error];
+        if (result) {
+            NSLog(@"已向/tmp/lingchong.txt写入数据。");
+        } else {
+            NSLog(@"向/tmp/personal/linghchong.txt写入数据失败：%@", [error localizedDescription]);
+        }
+         */
+        
+        /*
+        NSError *error;
+        NSString *content = [[NSString alloc] initWithContentsOfFile:@"/etc/resolv.conf" encoding:NSUTF8StringEncoding error:&error];
+        if (!content) {
+            NSLog(@"读取文件失败，错误原因：%@", [error localizedDescription]);
+        } else {
+            NSLog(@"/etc/resolv.conf文件内容为：%@", content);
+        }
+         */
+        
+        /*
+        NSURL *url = [NSURL URLWithString:@"http://pic25.photophoto.cn/20121216/0010023956779853_b.jpg"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSError *error = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:NULL error:&error];// NSData的默认大小为256KB。
+        if (!data) {
+            NSLog(@"获取图片失败，错误原因：%@", [error localizedDescription]);
+        }
+        
+        NSLog(@"获取图片成功，文件大小为%lu个字节。", [data length]);
+        BOOL written = [data writeToFile:@"/tmp/google.png" options:NSDataWritingAtomic error:&error];
+        if (!written) {
+            NSLog(@"写入图片到磁盘失败，错误原因：%@", [error localizedDescription]);
+            return 1;
+        }
+        
+        NSLog(@"下载与写入文件成功！");
+        
+        data = [NSData dataWithContentsOfFile:@"/tmp/google.png" options:0 error:&error];
+        NSLog(@"%@", data);
+        NSLog(@"%lu", [data length]);
+         */
+        
+        NSArray *directories = NSSearchPathForDirectoriesInDomains(NSMoviesDirectory, NSUserDomainMask, YES);
+        for (NSString *item in directories) {
+            NSLog(@"%@", item);
+        }
     }
     return 0;
 }

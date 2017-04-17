@@ -12,6 +12,7 @@
 		FE5556581E9D06B400008399 /* chapter16.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5556571E9D06B400008399 /* chapter16.m */; };
 		FE55565A1E9D16F300008399 /* libreadline.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5556591E9D16F300008399 /* libreadline.tbd */; };
 		FE55565C1E9D176200008399 /* chapter17.m in Sources */ = {isa = PBXBuildFile; fileRef = FE55565B1E9D176200008399 /* chapter17.m */; };
+		FE5F5DB61EA4A02F00E6AAD1 /* LCChapter25.m in Sources */ = {isa = PBXBuildFile; fileRef = FE5F5DB51EA4A02F00E6AAD1 /* LCChapter25.m */; };
 		FE651DBE1E9B880600FAA805 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FE651DBD1E9B880600FAA805 /* main.m */; };
 		FE6861B81EA09D500064C1C8 /* LCPortfolio.m in Sources */ = {isa = PBXBuildFile; fileRef = FE6861B71EA09D500064C1C8 /* LCPortfolio.m */; };
 		FE68667C1E9DD41800B530D5 /* BNRPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = FE68667B1E9DD41800B530D5 /* BNRPerson.m */; };
@@ -42,6 +43,8 @@
 		FE5556591E9D16F300008399 /* libreadline.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libreadline.tbd; path = usr/lib/libreadline.tbd; sourceTree = SDKROOT; };
 		FE55565B1E9D176200008399 /* chapter17.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = chapter17.m; sourceTree = "<group>"; };
 		FE55565D1E9D176F00008399 /* chapter17.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = chapter17.h; sourceTree = "<group>"; };
+		FE5F5DB41EA4A02F00E6AAD1 /* LCChapter25.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCChapter25.h; sourceTree = "<group>"; };
+		FE5F5DB51EA4A02F00E6AAD1 /* LCChapter25.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCChapter25.m; sourceTree = "<group>"; };
 		FE651DBA1E9B880600FAA805 /* TimeAfterTime */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TimeAfterTime; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE651DBD1E9B880600FAA805 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FE6861B61EA09D500064C1C8 /* LCPortfolio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCPortfolio.h; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				FE6861B71EA09D500064C1C8 /* LCPortfolio.m */,
 				FE5110581EA11C8100DBF479 /* LCChapter24.h */,
 				FE5110591EA11C8100DBF479 /* LCChapter24.m */,
+				FE5F5DB41EA4A02F00E6AAD1 /* LCChapter25.h */,
+				FE5F5DB51EA4A02F00E6AAD1 /* LCChapter25.m */,
 			);
 			path = TimeAfterTime;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 				FE6861B81EA09D500064C1C8 /* LCPortfolio.m in Sources */,
 				FE68667F1E9E145A00B530D5 /* LCStockHolding.m in Sources */,
 				FE51105A1EA11C8100DBF479 /* LCChapter24.m in Sources */,
+				FE5F5DB61EA4A02F00E6AAD1 /* LCChapter25.m in Sources */,
 				FE078E261E9E26E500E10C83 /* LCEmployee.m in Sources */,
 				FE9024EB1E9F0AF9008C3CFC /* LCForeignStockHolding.m in Sources */,
 				FE68667C1E9DD41800B530D5 /* BNRPerson.m in Sources */,
