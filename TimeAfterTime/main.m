@@ -17,6 +17,7 @@
 #include "LCPortfolio.h"
 #include "LCChapter24.h"
 #include "LCChapter25.h"
+#include "LCLogger.h"
 
 /*
  * 我目前（2017年4月10日晚10点35分）对消息发送（message send）机制的理解：
@@ -59,6 +60,8 @@ void calSecondsFromMyBirth() {
 }
 
 //void nsstringTest();
+
+typedef void(^ArrayEnumerationBlock)(id, NSUInteger, BOOL *);
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -322,13 +325,135 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%lu", [data length]);
          */
         
+        /*
         NSArray *directories = NSSearchPathForDirectoriesInDomains(NSMoviesDirectory, NSUserDomainMask, YES);
         for (NSString *item in directories) {
             NSLog(@"%@", item);
         }
+        */
+        
+        /*
+        LCLogger *logger = [[LCLogger alloc] init];
+        __unused NSTimer *timer =
+                [NSTimer scheduledTimerWithTimeInterval:2.0 target:logger selector:@selector(updateLastTime:) userInfo:nil repeats:true];
+        NSLog(@"%@", timer);
+        */
+        
+        /*
+        LCLogger *logger = [[LCLogger alloc] init];
+        NSURL *url = [NSURL URLWithString:@"http://www.gutenberg.org/cache/epub/205/pg205.txt"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        __unused NSURLConnection *fetchConn = [[NSURLConnection alloc] initWithRequest:request delegate:logger startImmediately:YES];
+         */
+        
+        /*
+        LCLogger *logger = [[LCLogger alloc] init];
+        [[NSNotificationCenter defaultCenter] addObserver:logger selector:@selector(zoneChange:) name:NSSystemTimeZoneDidChangeNotification object:nil];
+         */
+        
+        // [[NSRunLoop currentRunLoop] run];
+        
+        /*
+        NSArray *originalStrings = @[@"Stephen Curry", @"Ling Chong"];
+        NSLog(@"Original Strings: %@", originalStrings);
+        NSMutableArray *devowelizedStrings = [NSMutableArray array];
+        NSArray *vowelStrings = @[@"a", @"e", @"i", @"o", @"u"];
+         */
+        
+        // 声明一个block变量。
+        // void是block变量的返回值，^符号说明该变量（devowelizer）是一个block对象，devowelizer时block变量的名称，id、NSInteger、BOOL *是block变量的三个实参。
+        // block对象的实质有点像匿名函数。
+        // void (^devowelizer)(id, NSUInteger, BOOL *);
+        
+        /*
+        ArrayEnumerationBlock devowelizer = ^(id string, NSUInteger i, BOOL *stop) {
+            if ([string rangeOfString:@"i" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                *stop = true;
+                return;
+            }
+            
+            NSMutableString *newString = [NSMutableString stringWithString:string];
+            
+            for (NSString *item in vowelStrings) {
+                NSRange fullRange = NSMakeRange(0, [newString length]);
+                [newString replaceOccurrencesOfString:item withString:@"" options:NSCaseInsensitiveSearch range:fullRange];
+            }
+            [devowelizedStrings addObject:newString];
+        };*/
+        
+        /*
+        [originalStrings enumerateObjectsUsingBlock:^(id string, NSUInteger idx, BOOL *stop) {
+            if ([string rangeOfString:@"i" options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                *stop = true;
+                return;
+            }
+            
+            NSMutableString *newString = [NSMutableString stringWithString:string];
+            
+            for (NSString *item in vowelStrings) {
+                NSRange fullRange = NSMakeRange(0, [newString length]);
+                [newString replaceOccurrencesOfString:item withString:@"" options:NSCaseInsensitiveSearch range:fullRange];
+            }
+            [devowelizedStrings addObject:newString];
+        }];
+        NSLog(@"The new strings is: %@", devowelizedStrings);
+         */
+        
+        /*
+        // 声明Block变量。
+        double (^divBlock)(double, double);
+        
+        // 对Block变量赋值。
+        divBlock = ^(double dividend, double divisor) {
+            return dividend / divisor;
+        };
+        
+        // 使用Block变量。
+        NSLog(@"%.2f", divBlock(18, 2));
+         */
+        
+        /*
+        [[NSNotificationCenter defaultCenter] addObserverForName:NSSystemTimeZoneDidChangeNotification object:nil queue:nil usingBlock:^    (NSNotification *note) {
+            NSLog(@"The system time zone has changed.");
+        }];
+        
+        [[NSRunLoop currentRunLoop] run];
+         */
+        
+        /*
+        NSURL *url = [NSURL URLWithString:@"http://pic25.photophoto.cn/20121216/0010023956779853_b.jpg"];
+        NSURLRequest *request = [NSURLRequest requestWithURL:url];
+        NSError *error = nil;
+        NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:NULL error:&error];// NSData的默认大小为256KB。
+        if (!data) {
+            NSLog(@"获取图片失败，错误原因：%@", [error localizedDescription]);
+            return 1;
+        }
+        
+        NSMutableArray *root = [[NSMutableArray alloc] init];
+        NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+        [dic setObject:data forKey:@"NSData"];
+        [dic setObject:[NSDate date] forKey:@"NSDate"];
+        [dic setObject:[NSNumber numberWithInt:1] forKey:@"int"];
+        [dic setObject:[NSNumber numberWithDouble:2.0] forKey:@"double"];
+        [dic setObject:[NSNumber numberWithBool:true] forKey:@"BOOL"];
+        [root addObject:dic];
+        
+        [root writeToFile:@"/tmp/1.plist" atomically:true];
+        NSLog(@"写入文件完毕。");
+         */
+        
+        __unused NSArray *plist = [NSArray arrayWithContentsOfFile:@"/tmp/1.plist"];
+        NSLog(@"读取文件成功。");
     }
     return 0;
 }
+
+
+
+
+
+
 
 
 

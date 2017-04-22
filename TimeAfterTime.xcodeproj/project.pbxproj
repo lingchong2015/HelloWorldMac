@@ -19,6 +19,7 @@
 		FE68667F1E9E145A00B530D5 /* LCStockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE68667E1E9E145A00B530D5 /* LCStockHolding.m */; };
 		FE9024EB1E9F0AF9008C3CFC /* LCForeignStockHolding.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9024EA1E9F0AF9008C3CFC /* LCForeignStockHolding.m */; };
 		FE9024EE1E9F2B80008C3CFC /* LCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = FE9024ED1E9F2B80008C3CFC /* LCAsset.m */; };
+		FEAFA3621EA6FBFE00D4B506 /* LCLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FEAFA3611EA6FBFE00D4B506 /* LCLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -57,6 +58,8 @@
 		FE9024EA1E9F0AF9008C3CFC /* LCForeignStockHolding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCForeignStockHolding.m; sourceTree = "<group>"; };
 		FE9024EC1E9F2B80008C3CFC /* LCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCAsset.h; sourceTree = "<group>"; };
 		FE9024ED1E9F2B80008C3CFC /* LCAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCAsset.m; sourceTree = "<group>"; };
+		FEAFA3601EA6FBFE00D4B506 /* LCLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCLogger.h; sourceTree = "<group>"; };
+		FEAFA3611EA6FBFE00D4B506 /* LCLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCLogger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 				FE5110591EA11C8100DBF479 /* LCChapter24.m */,
 				FE5F5DB41EA4A02F00E6AAD1 /* LCChapter25.h */,
 				FE5F5DB51EA4A02F00E6AAD1 /* LCChapter25.m */,
+				FEAFA3601EA6FBFE00D4B506 /* LCLogger.h */,
+				FEAFA3611EA6FBFE00D4B506 /* LCLogger.m */,
 			);
 			path = TimeAfterTime;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				FE68667F1E9E145A00B530D5 /* LCStockHolding.m in Sources */,
 				FE51105A1EA11C8100DBF479 /* LCChapter24.m in Sources */,
 				FE5F5DB61EA4A02F00E6AAD1 /* LCChapter25.m in Sources */,
+				FEAFA3621EA6FBFE00D4B506 /* LCLogger.m in Sources */,
 				FE078E261E9E26E500E10C83 /* LCEmployee.m in Sources */,
 				FE9024EB1E9F0AF9008C3CFC /* LCForeignStockHolding.m in Sources */,
 				FE68667C1E9DD41800B530D5 /* BNRPerson.m in Sources */,
